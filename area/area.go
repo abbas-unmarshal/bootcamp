@@ -1,13 +1,18 @@
 package area
 
-func RectangleArea(w int, h int) int{
-	return w*h
+type Rectangle struct {
+	width  int
+	height int
 }
 
-func RectanglePerimeter(w int, h int) int{
-	return 2*(w+h)
+func (r *Rectangle) Area() int {
+	return r.width * r.height
 }
 
-func SumPerimeterArea(w,h int) int{
-	return RectangleArea(w,h)+RectanglePerimeter(w,h)
+func (r *Rectangle) Perimeter() int {
+	return 2 * (r.width + r.height)
+}
+
+func (r Rectangle) SumPerimeterArea() int {
+	return r.Area() + r.Perimeter()
 }
